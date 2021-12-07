@@ -1,0 +1,133 @@
+
+PECL是一个PHP扩展库，提供了一个所有已知扩展的目录，并为下载和开发PHP扩展提供了托管工具。
+
+
+http://pecl.php.net/
+
+
+Search for   搜索框里面输入redis搜索
+
+Search for     想找的扩展名称     in the       Package    —>
+
+
+
+http://pecl.php.net/package/redis
+
+#  stable版本的是稳定版的
+
+带有DLL标识的是windows系统的
+
+stable版本的是稳定版的
+
+wget http://pecl.php.net/get/redis-2.2.4.tgz
+
+
+/usr/bin/phpize
+
+报错安装        pkg install autoconf -y
+pkg install autoconf -y
+
+
+./
+
+pkg install autoconf -y
+
+
+phpize之后
+
+会在项目录里生成一个 configure 文件
+./configure 
+
+
+/data/data/com.termux/files/项目下生成的/php-config
+或者
+
+./configure --with-php-config=/data/data/com.termux/files/ 项目下生成的/php-config
+
+或者
+
+/data/data/com.termux/files/usr/bin/php-config
+
+
+./configure --with-php-config=/data/data/com.termux/files/usr/bin/php-config
+
+
+~ $ cd
+~ $ pwd
+/data/data/com.termux/files/home
+~ $ cd /data/data/com.termux/files/usr
+.../files/usr $ files_mulu
+.../files/usr $ cd redis-2.2.4
+.../usr/redis-2.2.4 $ ls
+COPYING             configure.ac
+CREDITS             configure~
+Makefile.fragments  include
+Makefile.objects    library.c
+README.markdown     library.h
+arrays.markdown     php_redis.h
+autom4te.cache      redis.c
+build               redis_array.c
+common.h            redis_array.h
+config.h.in         redis_array_impl.c
+config.log          redis_array_impl.h
+config.m4           redis_session.c
+config.nice         redis_session.h
+config.w32          run-tests.php
+configure
+.../usr/redis-2.2.4 $ cd      返回根目录
+
+cd  返回根目录
+
+~ $ pwd
+/data/data/com.termux/files/home
+~ $
+
+从根目录进入usr目录
+
+~ $ cd
+~ $ pwd
+/data/data/com.termux/files/home
+
+复制路径把/data/data/com.termux/files/
+home改成
+
+/data/data/com.termux/files/usr
+
+cd    /data/data/com.termux/files/usr
+
+进入usr目录
+
+~ $ cd /data/data/com.termux/files/usr
+
+.../files/usr $  clear
+
+clear换页clear
+
+
+看看    error 错误信息
+
+configure: error: no acceptable ld found in $PATH
+
+
+未设置环境变量，下载的扩展包解压包后，
+
+没在usr/bin下
+
+termux 设置环境变量
+
+或者是没有安装  gcc-10
+
+
+
+
+
+
+工具   utermux 0.108.122
+
+
+只是一个学习笔记，待修改
+
+
+
+
+
