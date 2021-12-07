@@ -1,0 +1,94 @@
+termux安装gcc转载
+
+先安装golang 
+
+pkg install golang
+
+vim  $PREFIX/etc/apt/sources.list
+
+编辑源加上一条
+
+deb https://its-pointless.github.io/files/24 termux extras
+
+
+:x保存退出后
+
+wget https://its-pointless.github.io/pointless.gpg
+apt-get install gnupg
+apt-key add pointless.gpg
+apt-get update
+
+ 当源无错误更新后
+
+通过apt search gcc会如下
+
+Sorting... Done
+Full Text Search... Done
+gcc-10/termux,now 10.3.0 aarch64 [installed]
+  GNU C compiler
+
+gcc-11/termux 11.1.0 aarch64
+  GNU C compiler
+
+gcc-9/termux 9.3.0-2 aarch64
+  GNU C compiler
+
+libgccjit-10-dev/termux 10.3.0 aarch64
+  GCC just-in-time compilation
+
+libgccjit-11-dev/termux 11.1.0 aarch64
+  GCC just-in-time compilation
+
+libgccjit-9-dev/termux 9.3.0-2 aarch64
+  GCC just-in-time compilation
+
+libgomp-10/termux 10.3.0 aarch64
+  openmp library for gcc-10
+
+libgomp-11/termux 11.1.0 aarch64
+  openmp library for gcc-11
+
+libgomp-7/termux 7.5.0 aarch64
+  openmp library for gcc
+
+libgomp-9/termux 9.3.0-2 aarch64
+  openmp library for gcc-9
+
+
+此时便可以安装gcc(可自行选择搜索到的gcc版本安装)
+
+ apt install gcc-10
+
+安装成功后可以看到版本号
+
+Unpacking gcc-10 (10.3.0) ...
+Setting up binutils (2.37-4) ...
+Setting up libgfortran5 (11.1.0) ...
+Setting up libisl (0.24) ...
+Setting up setup-scripts (2.8.0) ...
+Setting up libmpc (1.2.1) ...
+Setting up gcc-10 (10.
+
+更多关键词搜索   gcc_termux
+
+源
+
+https://github.com/its-pointless
+
+
+https://github.com/its-pointless/gcc_termux
+
+
+termux安装gcc
+
+https://blog.csdn.net/qq_33008305/article/details/121492398
+
+Termux中安装gcc-7/gfortran-7实操过程，安装成功可以编译Fortran,c/c++
+
+https://www.cnblogs.com/BlogOfMr-Leo/p/8660920.html
+
+
+
+
+
+
