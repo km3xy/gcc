@@ -1,0 +1,82 @@
+安装autoconf扩展后 执行 usr/bin/phpize 后 php自动生成配置扩展文件 configure
+
+
+phpize的深入理解
+
+https://m.jb51.net/article/46706.htm
+
+注意：Cannot find config.m4.
+这个错误是一个很傻的错误，解压以后需要cd到文件夹，不然phpize就会报错
+动态编译PHP的memcache扩展库，在执行/usr/bin/phpize时出现了错误，
+复制代码代码如下:
+
+Cannot find autoconf. Please check your autoconf installation and the $PHP_AUTOCONF environment variable is set correctly and then rerun this script.
+
+很明显缺少文件，需要安装。
+直接安装   autoconf
+
+pkg install    autoconf
+
+
+或者
+
+# wget http://ftp.gnu.org/gnu/m4/m4-1.4.9.tar.gz
+# tar -zvxf m4-1.4.9.tar.gz
+# cd m4-1.4.9/
+# ./configure && make && make install
+# cd ../
+# wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.62.tar.gz
+# tar -zvxf autoconf-2.62.tar.gz
+# cd autoconf-2.62/
+# ./configure && make && make install
+然后执行以下命令进行安装
+#/usr/local/php/bin/phpize
+#./configure –prefix=/usr/local/memcached –with-libevent=/usr/local/libevent –with-php-config=/usr/local/php/bin/php-config
+#make && make install
+
+
+
+https://m.jb51.net/article/70165.htm
+
+
+autoconf
+
+Autoconf/Automake工具简介
+
+
+在linux下编程的时候，有时候工程项目很大，文件比较多，此时需要使用自动创建Makefile文件功能。也就是使用Autoconf/Automake工具自动生成Makefile，为编译程序带来了方便，当前大多数软件包都是用此方法生成，Autoconf/Automake工具组主要包括autoconf,automake,perl,m4。
+
+
+https://www.cnblogs.com/xf-linux-arm-java-android/articles/3590770.html
+
+安装方法  pkg install    autoconf
+
+
+官方PHP Redis扩展文件下载
+https://pecl.php.net/package/redis
+
+选择与你PHP版本相应的文件下载后直接放到PHP目录下的ext文件夹里，然后修改php.ini配置文件
+
+
+/usr/bin/phpize
+
+报错安装        pkg   install   autoconf 
+pkg install   autoconf 
+
+pkg install  autoconf 
+
+phpize之后
+
+/usr/bin/phpize
+
+会在项目录里生成一个 configure 文件
+./configure 
+
+用它来编译其它文件
+
+
+./configure --with-php-config=/usr/bin/php-config
+
+
+
+
