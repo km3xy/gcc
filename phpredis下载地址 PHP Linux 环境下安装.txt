@@ -1,0 +1,116 @@
+PHP Linux 环境下安装与启用 phpredis 扩展指南 
+
+下载phpredis
+
+https://github.com/phpredis/phpredis/archive/5.1.1.tar.gz
+
+用浏览器下载后复制下载链接发现地址跳转了
+
+https://github.com/phpredis/phpredis/archive/5.2.0.tar.gz
+
+用浏览器下载后复制下载链接发现地址跳转了
+
+https://github.com/phpredis/phpredis/archive/5.2.2.tar.gz
+
+
+用浏览器下载后复制下载链接发现地址跳转了
+
+跳转地址
+
+https://codeload.github.com/phpredis/phpredis/tar.gz/5.2.2
+
+跳转地址
+https://codeload.github.com/phpredis/phpredis/tar.gz/5.1.1
+
+跳转地址
+https://codeload.github.com/phpredis/phpredis/tar.gz/5.2.0
+
+跳转地址
+https://github.com/phpredis/phpredis/tags
+
+
+https://codeload.github.com/phpredis/phpredis/tar.gz/5.1.1
+
+
+PHP Linux 环境下安装与启用 phpredis 扩展指南 
+
+
+$ wget https://github.com/phpredis/phpredis/archive/5.1.1.tar.gz
+
+
+https://blog.csdn.net/u012925833/article/details/103618414
+
+
+
+phpredis版本低会报
+
+configure.ac:161: the top level
+
+错误
+
+当你使用一台 Linux 设备时，你永远不知道你的设备上被安装了多少个 PHP 的版本，也不会知道当前的 PHP 设置是什么，关于 PHP 的多版本管理与信息查看可以查看 这篇文章的末尾。只有你搞明白了 PHP 的版本如何管理你才能顺滑的安装 PHP 的各种插件。
+
+踩坑预警： 如果你的插件没有生效，请依次检查
+
+在 php.ini 中是否启用该插件；
+当前环境（命令行 or Apache）下的 php.ini 目录；
+扩展的路径（extension_dir）；
+php7.x-dev 安装的版本是否是当前环境的版本；
+重新审视所有的操作与你自己的人生。
+以下所有流程都建立于 当前环境下仅安装了一个 PHP 版本，并且假定 PHP 版本为 7.3 ，以安装一个 phpredis 插件为示例演示。
+
+2. 下载 phpredis 源码
+打开 phpredis 的版本发布地址，获取最新版本的 tar.gz 格式的下载链接：
+
+https://github.com/phpredis/phpredis/archive/5.1.1.tar.gz
+
+
+移动到一个你能找到的目录下，如 /usr/src ，运行：
+
+$ wget https://github.com/phpredis/phpredis/archive/5.1.1.tar.gz
+
+
+之后解压源码文件，并进入该目录：
+
+$ tar xvzf phpredis-xxx.tar.gz
+$ cd phpredis-xxx.tar.gz
+
+3. 安装 phpredis
+
+官方安装文档
+
+https://github.com/phpredis/phpredis/blob/develop/INSTALL.markdown
+
+
+下载下来的源码还未经过编译，官方文档提供了简单的三步走策略：
+
+$ phpize
+$ ./configure [--enable-redis-igbinary] [--enable-redis-msgpack] [--enable-redis-lzf [--with-liblzf[=DIR]]] [--enable-redis-zstd]
+$ make && make install
+
+
+我们一步步看，如果运行 phpize 错误，我们就需要安装当前 php 的 dev 版本才能获取到编译工具，安装的版本必须为当前PHP环境的版本，
+
+
+dev，即develop（开发者版本）
+dev是开发包，做开发，或者从源码编译安装相关软件的时候需要。
+
+
+
+https://blog.csdn.net/u012925833/article/details/103618414
+
+
+https://github.com/phpredis/phpredis/blob/develop/INSTALL.markdown
+
+
+dev，即develop（开发者版本）
+dev是开发包，做开发，或者从源码编译安装相关软件的时候需要。
+
+
+如果要手动安装扩展，需要安装当前版本的 dev 开发工具，比如 php7.3 需要安装 php7.3-dev。
+dev 工具中的 phpize 可以用来编译扩展，与多版本的 php 使用类似，可以使用 phpize[version] 来切换不同版本的编译工具
+dev 工具中可以调用 php-config 来查看当前开发工具对应的 php 环境，如果当前设备安装了 php7.3 而 dev 工具是 php7.2-dev ，那么当前的环境只会是 php7.2 的环境，响应的编译的文件也会编译到 php7.2 的扩展路径中。
+
+php开发环境指引
+
+
